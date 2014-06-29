@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "d064a2ad71e977d37c9c15e7e37318eb",
+    "hash": "1efd64dca42034579473f7824b104131",
     "packages": [
         {
             "name": "indieauth/client",
@@ -75,7 +76,7 @@
                     "homepage": "http://aaronparecki.com"
                 },
                 {
-                    "name": "Tantek Çelik",
+                    "name": "Tantek \u00c7elik",
                     "homepage": "http://tantek.com"
                 }
             ],
@@ -148,16 +149,16 @@
         },
         {
             "name": "mf2/mf2",
-            "version": "0.2.7",
+            "version": "v0.1.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/indieweb/php-mf2.git",
-                "reference": "0c7c6b7267bdfd48d1698ac26f98bb6ba64795de"
+                "reference": "9094e4f7ad535e0796f5a384dec42bab81393e0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/indieweb/php-mf2/zipball/0c7c6b7267bdfd48d1698ac26f98bb6ba64795de",
-                "reference": "0c7c6b7267bdfd48d1698ac26f98bb6ba64795de",
+                "url": "https://api.github.com/repos/indieweb/php-mf2/zipball/9094e4f7ad535e0796f5a384dec42bab81393e0e",
+                "reference": "9094e4f7ad535e0796f5a384dec42bab81393e0e",
                 "shasum": ""
             },
             "require": {
@@ -169,15 +170,11 @@
             "suggest": {
                 "barnabywalters/mf-cleaner": "To more easily handle the canonical data php-mf2 gives you"
             },
-            "bin": [
-                "bin/fetch-mf2",
-                "bin/parse-mf2"
-            ],
             "type": "library",
             "autoload": {
-                "files": [
-                    "Mf2/Parser.php"
-                ]
+                "psr-0": {
+                    "mf2\\Parser": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -189,15 +186,14 @@
                     "homepage": "http://waterpigs.co.uk"
                 }
             ],
-            "description": "A pure, generic microformats2 parser — makes HTML as easy to consume as a JSON API",
+            "description": "A pure (generic) microformats-2 parser",
             "keywords": [
-                "html",
                 "microformats",
                 "microformats 2",
                 "parser",
                 "semantic"
             ],
-            "time": "2014-06-18 15:12:25"
+            "time": "2013-10-20 12:25:50"
         },
         {
             "name": "mpratt/relativetime",
