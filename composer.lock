@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "780a8c0cf2682bef5f38e00ad4d86fc9",
+    "hash": "1efd64dca42034579473f7824b104131",
     "packages": [
         {
             "name": "indieauth/client",
@@ -75,7 +76,7 @@
                     "homepage": "http://aaronparecki.com"
                 },
                 {
-                    "name": "Tantek Çelik",
+                    "name": "Tantek \u00c7elik",
                     "homepage": "http://tantek.com"
                 }
             ],
