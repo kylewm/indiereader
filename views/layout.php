@@ -53,9 +53,9 @@
         <? if(session('me')) { ?>
           <li><span class="navbar-text"><?= preg_replace('/https?:\/\//','',session('me')) ?></span></li>
           <li><a href="/signout">Sign Out</a></li>
-        <? } else if(!property_exists($this, 'authorizing')) { ?>
+        <? /* } else if(!property_exists($this, 'authorizing')) { ?>
           <li class="navbar-text"><?= $this->authorizing ?></li>
-        <? } else { ?>
+        <? */ } else { ?>
           <form action="/auth/start" method="get" class="navbar-form">
             <input type="text" name="me" placeholder="yourdomain.com" class="form-control" />
             <button type="submit" class="btn">Sign In</button>
