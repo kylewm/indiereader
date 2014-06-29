@@ -16,6 +16,7 @@ $app = new \Slim\Slim(array(
 
 require 'controllers/auth.php';
 require 'controllers/controllers.php';
+require 'controllers/settings.php';
 
 session_set_cookie_params(86400*30);
 session_start();

@@ -13,13 +13,28 @@
         $res->body($html);
     });
 
-    $app->get('/settings/?', function($format = 'html') use ($app) {
+    $app->get('/test', function($format = 'html') use ($app) {
+        $res = $app->response();
+
+        $url = 'http://notenoughneon.com/p/201406032340';
+        $entry = new Microformat\Entry();
+        $entry->loadFromUrl($url, $url);
+        ob_start();
+        render('test', array(
+            'title'       => 'Test',
+            'entry'       => $entry,
+        ));
+        $html = ob_get_clean();
+        $res->body($html);
+    });
+
+    $app->get('/docs/?', function($format = 'html') use ($app) {
 
         $res = $app->response();
 
         ob_start();
-        render('settings', array(
-            'title'       => 'Settings',
+        render('docs', array(
+            'title'       => 'Docs',
             'meta'        => '',
             'authorizing' => false
         ));

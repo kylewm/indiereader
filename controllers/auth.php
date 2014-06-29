@@ -57,6 +57,14 @@ function normalizeMeURL($url) {
   return build_url($me);
 }
 
+function require_login(&$app) {
+  if(!array_key_exists('user_id', $_SESSION)) {
+    $app->redirect('/');
+    return false;
+  } else {
+    return ORM::for_table('users')->find_one($_SESSION['user_id']);
+  }
+}
 
 $app->get('/auth/start', function() use($app) {
   $req = $app->request();
