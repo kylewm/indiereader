@@ -221,6 +221,7 @@ $app->get('/auth/callback', function() use($app) {
       $user->url = $me;
       $user->date_created = date('Y-m-d H:i:s');
     }
+    $user->subscriptions_url = '';
     $user->micropub_endpoint = $micropubEndpoint;
     $user->micropub_access_token = $token['auth']['access_token'];
     $user->micropub_scope = $token['auth']['scope'];
