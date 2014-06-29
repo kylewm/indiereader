@@ -28,3 +28,16 @@
 
     });
 
+    $app->get('/test', function($format = 'html') use ($app) {
+        $res = $app->response();
+
+        $url = 'http://notenoughneon.com/p/201406032340';
+        $entry = new Microformat\Entry();
+        $entry->loadFromUrl($url, $url);
+        ob_start();
+        render('test', array(
+            'entry'       => $entry,
+        ));
+        $html = ob_get_clean();
+        $res->body($html);
+    });
