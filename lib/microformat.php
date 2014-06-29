@@ -51,15 +51,16 @@ class Entry {
     public $contentValue = null;
     public $photo = null;
     public $url = null;
-    public $authorName = null;
-    public $authorPhoto = null;
-    public $authorUrl = null;
+    public $authorName = "";
+    public $authorPhoto = "";
+    public $authorUrl = "";
     public $syndication = null;
     public $replyTo = array();
     public $likeOf = array();
     public $repostOf = array();
     public $children = array();
     public $h = "entry";
+    public $feed = null;
     public $p = array(); // optional properties, eg. p-in-reply-to
 
     public function __construct($h = "entry", $p = array()) {
@@ -77,7 +78,10 @@ class Entry {
         return $this->loadFromMf(mftype($mf, "h-entry"));
     }
 
-    public function loadFromMf($mf) {
+    public function loadFromMf($mf, $feed = null) {
+        if (!empty($feed)) {
+            $this->feed = $feed;
+        }
         $this->name = mfpath($mf, "name/1");
         $this->published = mfpath($mf, "published/1");
         $this->contentHtml = mfpath($mf, "content/html/1");
@@ -179,6 +183,42 @@ class Entry {
     }
 
     public function save() {
+
+        if (!empty($this->url) && !empty($this->feed)) {
+
+            if (!($post = \ORM::for_table('post')->where('url',$this->url)->find_one())) {
+                $post = \ORM::for_table('post')->create();
+            }
+
+            $post->feed_id = $this->feed->id;
+            $post->url = $this->url;
+            $post->retrieved = date("Y-m-d H:i:s");
+            $post->published = date("Y-m-d H:i:s", strtotime($this->published));
+            if (!empty($this->contentHtml)) {
+                $post->content = $this->contentHtml;
+            } else if (!empty($this->contentValue)) {
+                $post->content = $this->contentValue;
+            } else {
+                $post->content = '';
+            }
+            if (empty($this->authorName)) {
+                $this->authorName = $this->feed->name;
+            }
+            if (empty($this->authorPhoto)) {
+                $this->authorPhoto = '';
+            }
+            if (empty($this->authorURL)) {
+                $this->authorURL = $this->feed->homepage_url;
+            }
+            $post->author_name = $this->authorName;
+            $post->author_photo = $this->authorPhoto;
+            $post->author_url = $this->authorURL;
+            $post->tags = '';
+            $post->timezone_offset = 0;
+            $post->save();
+
+
+        }
 
     }
 

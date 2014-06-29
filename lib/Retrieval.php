@@ -57,11 +57,16 @@
                                         if (in_array('h-entry',$item['type'])) {
 
                                             $entry = new \Microformat\Entry();
-                                            $entry->loadFromMf(array($item));
+                                            $entry->loadFromMf(array($item), $feed);
+                                            $entry->save();
 
                                         }
                                     }
                                 }
+
+                            } else {
+
+                                // Insert SimplePie retrieval here
 
                             }
                         }

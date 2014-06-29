@@ -4,8 +4,48 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "033b49a67f171d231099533e1d140cc1",
+    "hash": "6e379943382a2de47022b9a214db19f8",
     "packages": [
+        {
+            "name": "barnabywalters/mf-cleaner",
+            "version": "v0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barnabywalters/php-mf-cleaner.git",
+                "reference": "4ecbfc5a2893a5140b07afafb0bb00619e853809"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barnabywalters/php-mf-cleaner/zipball/4ecbfc5a2893a5140b07afafb0bb00619e853809",
+                "reference": "4ecbfc5a2893a5140b07afafb0bb00619e853809",
+                "shasum": ""
+            },
+            "require-dev": {
+                "php": ">=5.3",
+                "phpunit/phpunit": "*"
+            },
+            "suggest": {
+                "mf2/mf2": "To parse microformats2 structures from (X)HTML"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/BarnabyWalters/Mf2/Functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barnaby Walters",
+                    "email": "barnaby@waterpigs.co.uk"
+                }
+            ],
+            "description": "Cleans up microformats2 array structures",
+            "time": "2014-05-16 15:25:47"
+        },
         {
             "name": "indieauth/client",
             "version": "0.1.3",
@@ -76,7 +116,7 @@
                     "homepage": "http://aaronparecki.com"
                 },
                 {
-                    "name": "Tantek Çelik",
+                    "name": "Tantek \u00c7elik",
                     "homepage": "http://tantek.com"
                 }
             ],
@@ -190,7 +230,7 @@
                     "homepage": "http://waterpigs.co.uk"
                 }
             ],
-            "description": "A pure, generic microformats2 parser — makes HTML as easy to consume as a JSON API",
+            "description": "A pure, generic microformats2 parser \u2014 makes HTML as easy to consume as a JSON API",
             "keywords": [
                 "html",
                 "microformats",
