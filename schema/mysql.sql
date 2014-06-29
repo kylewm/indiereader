@@ -20,14 +20,13 @@ CREATE TABLE IF NOT EXISTS `post` (
   `author_url` text NOT NULL,
   `author_photo` text NOT NULL,
   `published` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `retrieved` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `retrieved` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `timezone_offset` int(11) NOT NULL,
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `url` (`url`),
   KEY `feed_id` (`feed_id`,`published`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
 
 CREATE TABLE IF NOT EXISTS `subscription` (
   `user_id` int(11) NOT NULL,
