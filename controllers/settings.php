@@ -9,7 +9,6 @@ $app->get('/settings/?', function($format = 'html') use ($app) {
     render('settings', array(
         'title'       => 'Settings',
         'meta'        => '',
-        'authorizing' => false,
         'subscriptions_url' => $user->subscriptions_url
     ));
     $html = ob_get_clean();
