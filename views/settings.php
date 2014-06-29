@@ -24,7 +24,7 @@ $(function(){
     $.post("/settings/save", {
       subscriptions_url: $("#subscriptions_url").val()
     }, function(data){
-      console.log(data);
+      // TODO: show list of feeds found or show docs if none found
     });
   });
 });
