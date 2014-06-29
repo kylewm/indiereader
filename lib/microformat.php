@@ -217,7 +217,11 @@ class Entry {
                 $this->authorName = $this->feed->name;
             }
             if (empty($this->authorPhoto)) {
-                $this->authorPhoto = '';
+                if (!empty($this->feed->author_photo)) {
+                    $this->authorPhoto = $this->feed->author_photo;
+                } else {
+                    $this->authorPhoto = '';
+                }
             }
             if (empty($this->authorURL)) {
                 $this->authorURL = $this->feed->homepage_url;
