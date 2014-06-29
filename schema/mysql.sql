@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS `user_bookmarked_post` (
 CREATE TABLE `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `url` varchar(255) DEFAULT NULL,
+  `subscriptions_url` varchar(255) NOT NULL,
   `default_timezone` varchar(255) DEFAULT 'America/Los_Angeles',
   `micropub_endpoint` varchar(255) DEFAULT NULL,
   `micropub_access_token` text,
