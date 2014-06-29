@@ -29,27 +29,35 @@ CREATE TABLE IF NOT EXISTS `post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `subscription` (
+`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `feed_id` int(11) NOT NULL,
-  PRIMARY KEY (`user_id`,`feed_id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY (`user_id`,`feed_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `user_read_post` (
+`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
-  PRIMARY KEY (`user_id`,`post_id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY (`user_id`,`post_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `user_replied_post` (
+`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
-  PRIMARY KEY (`user_id`,`post_id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY (`user_id`,`post_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `user_bookmarked_post` (
+`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
-  PRIMARY KEY (`user_id`,`post_id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY (`user_id`,`post_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `users` (

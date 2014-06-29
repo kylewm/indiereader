@@ -36,8 +36,8 @@
             }
 
             return ORM::for_table('feed')
-                ->join('subscriptions', array('feed.id', '=', 'subscriptions.feed_id'))
-                ->where('subscriptions.user_id', $this->user_id)
+                ->join('subscription', array('feed.id', '=', 'subscription.feed_id'))
+                ->where('subscription.user_id', $this->user_id)
                 ->find_many();
 
         }
@@ -100,7 +100,7 @@
                 return false;
             }
 
-            if ($feeds = ORM::for_table('feed')->where('feed_url','=',$feed->feed_url)->get_many()) {
+            if ($feeds = ORM::for_table('feed')->where('feed_url',$feed->feed_url)->find_many()) {
                 foreach($feeds as $row) {
                     $row->set(array(
                         'name' => $feed->name,
@@ -114,6 +114,9 @@
                 $row->name = $feed->name;
                 $row->feed_url = $feed->feed_url;
                 $row->homepage_url = $feed->homepage_url;
+                $row->last_retrieved = date("Y-m-d H:i:s");
+                $row->created = date("Y-m-d H:i:s");
+                $row->updated = date("Y-m-d H:i:s");
                 $row->save();
                 return $row->id;
             }
@@ -132,7 +135,7 @@
                 return false;
             }
 
-            $subscription = ORM::for_table('subscriptions')->create();
+            $subscription = ORM::for_table('subscription')->create();
             $subscription->user_id = $this->user_id;
             $subscription->feed_id = (int) $feed_id;
             return $subscription->save();
@@ -150,7 +153,7 @@
                 return false;
             }
 
-            ORM::for_table('subscriptions')->where( 'user_id',  $this->user_id)->where('feed_id', $feed_id)->delete();
+            ORM::for_table('subscription')->where( 'user_id',  $this->user_id)->where('feed_id', $feed_id)->delete();
 
         }
 
@@ -167,13 +170,14 @@
                 return false;
             }
 
-            ORM::for_table('subscriptions')->where('user_id',$this->user_id)->delete();
+            ORM::for_table('subscription')->where('user_id',$this->user_id)->delete();
 
             if (!empty($feeds)) {
                 foreach($feeds as $feed) {
 
-                    $feed_id = $this->updateFeedDetails($feed);
-                    $this->subscribeToFeed($feed_id);
+                    if ($feed_id = $this->updateFeedDetails($feed)) {
+                        $this->subscribeToFeed($feed_id);
+                    }
 
                 }
             }
