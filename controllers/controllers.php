@@ -7,7 +7,6 @@
         render('index', array(
             'title'       => 'IndieReader',
             'meta'        => '',
-            'authorizing' => false
         ));
         $html = ob_get_clean();
         $res->body($html);
@@ -36,7 +35,6 @@
         render('docs', array(
             'title'       => 'Docs',
             'meta'        => '',
-            'authorizing' => false
         ));
         $html = ob_get_clean();
         $res->body($html);
