@@ -67,8 +67,18 @@
                             } else {
 
                                 // Insert SimplePie retrieval here
-                                
+                                $sp = new SimplePie();
+                                $sp->set_raw_data($content);
+                                $sp->init();
+                                if ($items = $sp->get_items()) {
+                                    foreach($items as $item) {
 
+                                        $entry = new \Microformat\Entry();
+                                        $entry->loadFromItem($item);
+                                        $entry->save();
+
+                                    }
+                                }
                             }
                         }
 
