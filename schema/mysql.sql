@@ -4,9 +4,9 @@ CREATE TABLE IF NOT EXISTS `feed` (
   `name` text NOT NULL,
   `feed_url` varchar(255) NOT NULL,
   `homepage_url` text NOT NULL,
-  `last_retrieved` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `last_retrieved` datetime NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `feed_url` (`feed_url`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -19,8 +19,8 @@ CREATE TABLE IF NOT EXISTS `post` (
   `author_name` text NOT NULL,
   `author_url` text NOT NULL,
   `author_photo` text NOT NULL,
-  `published` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `retrieved` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `published` datetime NOT NULL,
+  `retrieved` datetime NOT NULL,
   `timezone_offset` int(11) NOT NULL,
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
