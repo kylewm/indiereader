@@ -21,6 +21,7 @@
         $entry->loadFromUrl($url, $url);
         ob_start();
         render('test', array(
+            'title'       => 'Test',
             'entry'       => $entry,
         ));
         $html = ob_get_clean();
