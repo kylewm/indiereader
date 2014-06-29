@@ -42,6 +42,7 @@
     <div class="nav">
       <ul class="nav navbar-nav">
 
+          <li><a href="/">IndieReader</a></li>
         <? if(session('me')) { ?>
           <li><a href="/settings">Settings</a></li>
         <? } ?>
