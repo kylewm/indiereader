@@ -7,6 +7,7 @@
           ->join('feed', ['subscription.feed_id','=','feed.id'])
           ->join('post', ['feed.id','=','post.feed_id'])
           ->where('subscription.user_id', session('user_id'))
+          ->order_by_desc('published')
           ->find_many();
 
         ob_start();
