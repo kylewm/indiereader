@@ -4,11 +4,6 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "hash": "53cc4897c18d9389d5b473420a267829",
-=======
-    "hash": "417604886600eb5728516389f305bba6",
->>>>>>> FETCH_HEAD
     "packages": [
         {
             "name": "indieauth/client",

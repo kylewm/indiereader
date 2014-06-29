@@ -48,7 +48,7 @@
                 foreach($feeds as $feed) {
                     if (!empty($feed->feed_url)) {
 
-
+                        var_export(mf2\fetch($feed->feed_url));
 
                     }
                 }
