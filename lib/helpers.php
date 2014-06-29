@@ -8,6 +8,10 @@ function render($page, $data) {
   return $app->render('layout.php', array_merge($data, array('page' => $page)));
 };
 
+function friendly_url($url) {
+  return preg_replace(['/https?:\/\//','/\/$/'],'',$url);
+}
+
 function partial($template, $data=array(), $debug=false) {
   global $app;
 

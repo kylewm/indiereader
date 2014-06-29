@@ -18,6 +18,7 @@
 
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/images/indiereader-icon-57.png">

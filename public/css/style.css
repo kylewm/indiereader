@@ -110,3 +110,63 @@ body {
   word-break: break-all;
   word-wrap: break-word;
 }
+
+
+
+
+.entry {
+  border-bottom: 1px #eee solid;
+  padding: 10px 0;
+  margin-bottom: 4px;
+}
+
+.entry .content {
+  white-space: pre-wrap;
+}
+
+.entry .meta {
+  font-size: 10pt;
+}
+
+.entry .actions {
+  font-size: 10pt;
+  float: right;
+}
+.entry .actions a {
+  color: #ddd;
+  margin-left: 12px;
+}
+.entry .actions a.complete {
+  color: #135fa1;
+}
+.entry .actions a:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+
+.minicard .author_photo {
+  float: left;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-right: 7px;
+}
+.minicard .author_name {
+  color: #999;
+}
+.minicard .grey {
+  color: #999;
+  font-weight: bold;
+}
+.minicard a.author_url {
+  display: inline;
+  padding-top: 4px;
+  font-weight: bold;
+}
+.minicard + .note-text {
+  clear: both;
+}
+
+
+
