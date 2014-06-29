@@ -12,3 +12,4 @@ $app->get('/', function($format='html') use($app) {
   $html = ob_get_clean();
   $res->body($html);
 });
+

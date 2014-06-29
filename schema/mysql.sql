@@ -52,3 +52,16 @@ CREATE TABLE IF NOT EXISTS `user_bookmarked_post` (
   PRIMARY KEY (`user_id`,`post_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `url` varchar(255) DEFAULT NULL,
+  `default_timezone` varchar(255) DEFAULT 'America/Los_Angeles',
+  `micropub_endpoint` varchar(255) DEFAULT NULL,
+  `micropub_access_token` text,
+  `micropub_scope` varchar(255) DEFAULT NULL,
+  `micropub_response` text,
+  `micropub_success` tinyint(4) DEFAULT '0',
+  `date_created` datetime DEFAULT NULL,
+  `last_login` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

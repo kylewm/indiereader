@@ -11,6 +11,7 @@ $app = new \Slim\Slim(array(
   'view' => new \Slim\Extras\Views\Savant()
 ));
 
+require 'controllers/auth.php';
 require 'controllers/controllers.php';
 
 session_set_cookie_params(86400*30);
