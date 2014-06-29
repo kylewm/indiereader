@@ -4,6 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+    "hash": "0cb81b051dfa75579abbcb79bf472390",
     "packages": [
         {
             "name": "indieauth/client",
@@ -75,7 +76,7 @@
                     "homepage": "http://aaronparecki.com"
                 },
                 {
-                    "name": "Tantek Çelik",
+                    "name": "Tantek \u00c7elik",
                     "homepage": "http://tantek.com"
                 }
             ],
@@ -189,7 +190,7 @@
                     "homepage": "http://waterpigs.co.uk"
                 }
             ],
-            "description": "A pure, generic microformats2 parser — makes HTML as easy to consume as a JSON API",
+            "description": "A pure, generic microformats2 parser \u2014 makes HTML as easy to consume as a JSON API",
             "keywords": [
                 "html",
                 "microformats",
