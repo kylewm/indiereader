@@ -196,7 +196,10 @@
                 return false;
             }
 
-            return $this->refreshUserSubscriptions($this->getFeedsFromURL($url));
+            if ($this->refreshUserSubscriptions($this->getFeedsFromURL($url))) {
+                $retrieval = new Retrieval();
+                $retrieval->pollFeeds();
+            }
 
         }
 

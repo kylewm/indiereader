@@ -43,6 +43,8 @@
                 $feeds = $this->getFeedsToPoll();
             }
 
+            $result = array('feeds' => count($feeds), 'items' => 0);
+
             if (!empty($feeds) && is_array($feeds)) {
 
                 foreach($feeds as $feed) {
@@ -59,6 +61,7 @@
                                             $entry = new \Microformat\Entry();
                                             $entry->loadFromMf(array($item), $feed);
                                             $entry->save();
+                                            $result['items']++;
 
                                         }
                                     }
@@ -76,6 +79,7 @@
                                         $entry = new \Microformat\Entry();
                                         $entry->loadFromItem($item);
                                         $entry->save();
+                                        $result['items']++;
 
                                     }
                                 }
@@ -86,6 +90,8 @@
                 }
 
             }
+
+            return $result;
 
         }
 
