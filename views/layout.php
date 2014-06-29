@@ -52,7 +52,7 @@
         <? if(session('me')) { ?>
           <li><span class="navbar-text"><?= preg_replace('/https?:\/\//','',session('me')) ?></span></li>
           <li><a href="/signout">Sign Out</a></li>
-        <? } else if(property_exists($this, 'authorizing')) { ?>
+        <? } else if(!empty($this->authorizing)) { ?>
           <li class="navbar-text"><?= $this->authorizing ?></li>
         <? } else { ?>
           <form action="/auth/start" method="get" class="navbar-form">
