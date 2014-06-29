@@ -68,7 +68,7 @@ class Entry {
     }
 
     public function loadFromUrl($url) {
-        $mf = \Mf2\fetch($url);
+        $mf = \mf2\fetch($url);
         return $this->loadFromMf(mftype($mf, "h-entry"));
     }
 
@@ -134,12 +134,16 @@ class Entry {
     }
 
     public function toHtml() {
-        ob_start();
-        //FIXME: use render()
-        //require("tpl/entry.php");
-        $html = ob_get_contents();
-        ob_end_clean();
-        return $html;
+        return partial('partials/entry', array(
+            'name' => $this->name,
+            'published' => $this->published,
+            'contentHtml' => $this->contentHtml,
+            'contentValue' => $this->contentValue,
+            'url' => $this->url,
+            'authorName' => $this->authorName,
+            'authorPhoto' => $this->authorPhoto,
+            'authorUrl' => $this->authorUrl,
+        ));
     }
 
     public function references() {
