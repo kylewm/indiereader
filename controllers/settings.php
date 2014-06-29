@@ -25,6 +25,9 @@ $app->post('/settings/save', function() use($app) {
     $user->subscriptions_url = $params['subscriptions_url'];
     $user->save();
 
+    $subs = new Subscriptions();
+    $subs->refreshUserSubscriptionsFromURL($user->subscriptions_url);
+
     $app->response()->body(json_encode(array(
       'result' => 'ok'
     )));
