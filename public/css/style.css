@@ -143,6 +143,9 @@ body {
   color: #428bca;
   text-decoration: none;
 }
+.entry img {
+  max-width: 500px;
+}
 
 
 .minicard .author_photo {
