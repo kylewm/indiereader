@@ -47,3 +47,22 @@
 
     });
 
+    $app->get('/retrieve/?', function($format = 'html') use ($app) {
+
+        $res = $app->response();
+        ob_start();
+
+        $retrieval = new Retrieval();
+        $result = $retrieval->pollFeeds();
+
+        render('retrieval', array(
+            'title' => 'Retrieval',
+            'result' => $result
+        ));
+
+        $html = ob_get_clean();
+        $res->body($html);
+
+
+    });
+

@@ -87,6 +87,7 @@ class Entry {
         $author = $item->get_author();
         $this->authorName = $author->get_name();
         $this->authorUrl = $author->get_link();
+        $this->authorPhoto  = '';
     }
 
     public function loadFromMf($mf, $feed = null) {
