@@ -2,6 +2,9 @@
 chdir('..');
 require 'vendor/autoload.php';
 
+// Default timezone
+date_default_timezone_set('UTC');
+
 // Configure the Savant plugin
 \Slim\Extras\Views\Savant::$savantDirectory = 'vendor/saltybeagle/savant3';
 \Slim\Extras\Views\Savant::$savantOptions = array('template_path' => 'views');
