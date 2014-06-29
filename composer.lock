@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1efd64dca42034579473f7824b104131",
+    "hash": "53cc4897c18d9389d5b473420a267829",
     "packages": [
         {
             "name": "indieauth/client",
