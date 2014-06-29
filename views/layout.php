@@ -43,7 +43,7 @@
       <ul class="nav navbar-nav">
 
         <? if(session('me')) { ?>
-          <li><a href="/new">New Post</a></li>
+          <li><a href="/settings">Settings</a></li>
         <? } ?>
 
         <li><a href="/docs">Docs</a></li>
