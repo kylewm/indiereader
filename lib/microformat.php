@@ -78,6 +78,17 @@ class Entry {
         return $this->loadFromMf(mftype($mf, "h-entry"));
     }
 
+    // load from SimplePie_Item
+    public function loadFromItem($item) {
+        $this->name = $item->get_title();
+        $this->published = $item->get_date("c");
+        $this->contentHtml = $this->contentValue = $item->get_content();
+        $this->url = $item->get_permalink();
+        $author = $item->get_author();
+        $this->authorName = $author->get_name();
+        $this->authorUrl = $author->get_link();
+    }
+
     public function loadFromMf($mf, $feed = null) {
         if (!empty($feed)) {
             $this->feed = $feed;
