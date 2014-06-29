@@ -6,7 +6,7 @@
     <a href="<?= $this->author_url ?>" class="author_url"><?= friendly_url($this->author_url) ?></a>
     <a href="<?= $this->author_url ?>" class="author_name"><?= $this->author_name ?></a>
   </div>
-  <div class="content"><?= htmlspecialchars($this->content) ?></div>
+  <div class="content"><?= $this->content ?></div>
   <div class="actions">
     <a href="#" class="bookmark" data-post-id="<?= $this->post_id ?>" data-url="<?= $this->url ?>"><i class="fa fa-star"></i> Bookmark</a>
     <a href="#" class="reply" data-post-id="<?= $this->post_id ?>" data-url="<?= $this->url ?>"><i class="fa fa-mail-reply"></i> Reply</a>
