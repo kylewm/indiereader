@@ -48,7 +48,23 @@
                 foreach($feeds as $feed) {
                     if (!empty($feed->feed_url)) {
 
-                        var_export(mf2\fetch($feed->feed_url));
+                        $http = new HTTP();
+                        if ($content = $http->get($feed->feed_url)) {
+                            if ($mf2_content = mf2\parse($content)) {
+
+                                if (!empty($mf2_content['items'])) {
+                                    foreach($mf2_content['items'] as $item) {
+                                        if (in_array('h-entry',$item['type'])) {
+
+                                            $entry = new \Microformat\Entry();
+                                            $entry->loadFromMf(array($item));
+
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
 
                     }
                 }
