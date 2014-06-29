@@ -52,7 +52,7 @@
 
                         $http = new HTTP();
                         if ($content = $http->get($feed->feed_url)) {
-                            if ($mf2_content = mf2\parse($content)) {
+                            if ($mf2_content = mf2\parse($content, $feed->feed_url)) {
 
                                 if (!empty($mf2_content['items'])) {
                                     foreach($mf2_content['items'] as $item) {
