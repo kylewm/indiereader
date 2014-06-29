@@ -153,7 +153,7 @@
                 return false;
             }
 
-            ORM::for_table('subscription')->where( 'user_id',  $this->user_id)->where('feed_id', $feed_id)->delete();
+            ORM::for_table('subscription')->where( 'user_id',  $this->user_id)->where('feed_id', $feed_id)->delete_many();
 
         }
 
@@ -170,7 +170,7 @@
                 return false;
             }
 
-            ORM::for_table('subscription')->where('user_id',$this->user_id)->delete();
+            ORM::for_table('subscription')->where('user_id',$this->user_id)->delete_many();
 
             if (!empty($feeds)) {
                 foreach($feeds as $feed) {

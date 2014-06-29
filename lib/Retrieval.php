@@ -33,4 +33,28 @@
 
         }
 
+        /**
+         * Poll feeds. Optionally, supply a list of feed objects - otherwise it'll work it out.
+         * @param bool $feeds Optionally, a list of feeds.
+         */
+        function pollFeeds($feeds = false) {
+
+            if ($feeds === false) {
+                $feeds = $this->getFeedsToPoll();
+            }
+
+            if (!empty($feeds) && is_array($feeds)) {
+
+                foreach($feeds as $feed) {
+                    if (!empty($feed->feed_url)) {
+
+
+
+                    }
+                }
+
+            }
+
+        }
+
     }
