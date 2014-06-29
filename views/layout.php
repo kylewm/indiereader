@@ -52,7 +52,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <? if(session('me')) { ?>
-          <li><span class="navbar-text"><?= preg_replace('/https?:\/\//','',session('me')) ?></span></li>
+          <li><span class="navbar-text"><?= friendly_url(session('me')) ?></span></li>
           <li><a href="/signout">Sign Out</a></li>
         <? /* } else if(!property_exists($this, 'authorizing')) { ?>
           <li class="navbar-text"><?= $this->authorizing ?></li>

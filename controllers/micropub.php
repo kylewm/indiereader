@@ -18,6 +18,7 @@ $app->post('/micropub/bookmark', function() use($app){
 
     $user->save();
 
+    $app->response()['Content-Type'] = 'application/json';
     $app->response()->body(json_encode(array(
       'response' => htmlspecialchars($response),
       'location' => $location,
