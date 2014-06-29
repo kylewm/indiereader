@@ -67,6 +67,11 @@ class Entry {
         $this->p = $p;
     }
 
+    public function loadFromUrl($url) {
+        $mf = \Mf2\fetch($url);
+        return $this->loadFromMf(mftype($mf, "h-entry"));
+    }
+
     public function loadFromHtml($html, $url = null) {
         $mf = \Mf2\parse($html, $url);
         return $this->loadFromMf(mftype($mf, "h-entry"));
