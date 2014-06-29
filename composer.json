@@ -14,7 +14,8 @@
       "lib/helpers.php",
       "lib/HTTP.php",
       "lib/Subscriptions.php",
-      "lib/Retrieval.php"
+      "lib/Retrieval.php",
+      "lib/microformat.php"
     ]
   }
 }
