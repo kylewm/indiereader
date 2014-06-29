@@ -7,7 +7,7 @@
 
   <pre><?= htmlspecialchars(<<<'EOT'
 <div class="h-feed">
-  <h2 class="p-name">Subscription</h2>
+  <h2 class="p-name">Subscriptions</h2>
   <ul>
     <li class="h-entry">
       <a href="http://aaronparecki.com/" class="u-feed">Aaron Parecki</a>
