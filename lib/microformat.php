@@ -189,6 +189,10 @@ class Entry {
         return isset($this->photo);
     }
 
+    public function save() {
+
+    }
+
 }
 
 ?>
