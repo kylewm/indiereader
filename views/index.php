@@ -38,7 +38,8 @@ $(function(){
 
   $('.entry .reply').click(function(){
     var post_id = $(this).data('post-id');
-    $("#entry_"+post_id+" .status").html('<textarea class="reply-content form-control" style="height: 4em;"></textarea><br><input type="button" value="Reply" class="btn btn-success save" data-post-id="'+post_id+'">');
+    var post_url = $(this).data('url');
+    $("#entry_"+post_id+" .status").html('<textarea class="reply-content form-control" style="height: 4em;"></textarea><br><input type="button" value="Reply" class="btn btn-success save" data-post-id="'+post_id+'" data-url="'+post_url+'">');
     $("#entry_"+post_id+" .status textarea").focus();
     bind_reply();
   });
